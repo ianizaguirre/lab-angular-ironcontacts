@@ -10,15 +10,25 @@ export class ContactListComponent implements OnInit {
   contacts: Object[];
   newContact: Object = {};
 
+
+// this.newContact.name
+// this.newContact.email
+// this.newContact.PhoneNumber
+// this.newContact.image
+
+
   constructor() { }
 
   ngOnInit() {
     this.contacts = contactList;
   }
 
+
   addContact(){
     console.log("Add contact has been called");
     // add contact to contacts list
+    this.contacts.push(this.newContact);
+    this.newContact = {};
     // clear inputs
   }
 }
